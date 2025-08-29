@@ -894,52 +894,87 @@ body.light-theme .resume-sidebar {
     margin-top: 20px;
 }
 
+
+/* === START OF MODIFIED SKILLS STYLES === */
 .skill-item {
     background-color: var(--card-bg);
     padding: 20px;
     border-radius: 8px;
     text-align: center;
-    font-size: 3em;
-    color: var(--highlight-color);
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     position: relative;
     cursor: help;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 110px;
+}
+
+.skill-item i {
+    font-size: 3.5em;
+    color: var(--highlight-color); /* Monochrome color by default */
+    transition: all 0.3s ease;
 }
 
 .skill-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0, 255, 128, 0.3);
-    background-color: var(--highlight-color);
-    color: var(--bg-color);
+    background-color: var(--input-bg);
 }
 
-.skill-item[data-tooltip]:hover::before {
+.skill-item:hover i {
+    color: inherit; /* This reveals the official color from the .colored class */
+    transform: scale(1.1);
+}
+
+/* New Professional Tooltip */
+.skill-item[data-tooltip]::before {
     content: attr(data-tooltip);
     position: absolute;
-    bottom: calc(100% + 10px);
+    bottom: calc(100% + 15px);
     left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--text-color);
-    color: var(--bg-color);
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 0.8em;
+    transform: translateX(-50%) translateY(10px) scale(0.95);
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    font-weight: 600;
     white-space: nowrap;
     z-index: 10;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
-.skill-item[data-tooltip]:hover::after {
+.skill-item[data-tooltip]::after {
     content: '';
     position: absolute;
-    bottom: 100%;
+    bottom: calc(100% + 5px);
     left: 50%;
-    transform: translateX(-50%) rotate(45deg);
-    width: 10px;
-    height: 10px;
-    background-color: var(--text-color);
+    transform: translateX(-50%) translateY(10px) scale(0.95);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid var(--card-bg);
+    filter: drop-shadow(0 -1px 0px var(--border-color));
     z-index: 9;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
+
+.skill-item[data-tooltip]:hover::before,
+.skill-item[data-tooltip]:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+}
+/* === END OF MODIFIED SKILLS STYLES === */
+
 
 .about-info-grid {
     display: grid;
