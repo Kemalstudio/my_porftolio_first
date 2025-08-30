@@ -542,7 +542,7 @@ document.addEventListener('DOMContentLoaded', () => {
             github_url: "https://github.com/Kemalstudio",
             type: 'website',
             images: [
-                "../images/aura/aura-computers-fullpage.png",
+                "../images/aura/sonus_music_web.png",
             ]
         },
         {
