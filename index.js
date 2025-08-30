@@ -554,7 +554,7 @@ document.addEventListener('DOMContentLoaded', () => {
             github_url: "https://github.com/Kemalstudio",
             type: 'app',
             images: [
-                "../images/aura/aura-computers-fullpage.png",
+                "../images/aura/sonus_music_app.jpg",
             ]
         }
     ];
