@@ -9,24 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Devicon Link Added -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-    <style>
-        /* --- СТИЛИ ДЛЯ ВСЕГО ПРОЕКТА --- */
-        #form-status {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 1.1em;
-            padding: 10px 15px;
-            border-radius: 5px;
-            display: none;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-            max-width: 300px;
-            margin-left: auto;
-            margin-right: auto;
-            background-color: #dc3545;
-            color: white;
-        }
-    </style>
 </head>
 
 <body class="dark-theme">
@@ -99,7 +81,7 @@
             <div class="hero-image-container">
                 <div class="rotating-border"></div>
                 <div class="rotating-border-inner"></div>
-                <img src="/Kemalstudio.jpg" alt="Атаев Кемал" class="hero-image">
+                <img src="/images/Kemalstudio.jpg" alt="Атаев Кемал" class="hero-image">
             </div>
         </section>
 
@@ -205,34 +187,63 @@
                         </div>
                     </div>
                     <div id="skills-content" class="tab-content">
-                        <div class="skills-grid">
-                            <div class="skill-item" data-tooltip="HTML5">
-                                <i class="devicon-html5-plain-wordmark colored"></i></div>
-                            <div class="skill-item" data-tooltip="CSS3">
-                                <i class="devicon-css3-plain-wordmark colored"></i></div>
-                            <div class="skill-item" data-tooltip="Sass">
-                                <i class="devicon-sass-original colored"></i></div>
-                            <div class="skill-item" data-tooltip="JavaScript">
-                                <i class="devicon-javascript-plain colored"></i></div>
-                            <div class="skill-item" data-tooltip="PHP">
-                                <i class="devicon-php-plain colored"></i></div>
-                            <div class="skill-item" data-tooltip="Laravel">
-                                <i class="devicon-laravel-plain-wordmark colored"></i></div>
-                            <div class="skill-item" data-tooltip="jQuery">
-                                <i class="devicon-jquery-plain-wordmark colored"></i></div>
-                            <div class="skill-item" data-tooltip="Chart.js">
-                                <i class="fas fa-chart-line"></i></div>
-                            <div class="skill-item" data-tooltip="MySQL">
-                                <i class="devicon-mysql-plain-wordmark colored"></i></div>
-                            <div class="skill-item" data-tooltip="PostgreSQL">
-                                <i class="devicon-postgresql-plain-wordmark colored"></i></div>
-                            <div class="skill-item" data-tooltip="Figma">
-                                <i class="devicon-figma-plain colored"></i></div>
-                            <div class="skill-item" data-tooltip="Bootstrap">
-                                <i class="devicon-bootstrap-plain-wordmark colored"></i></div>
-                            <div class="skill-item" data-tooltip="GitHub">
-                                <i class="devicon-github-original-wordmark colored"></i></div>
-                        </div>
+                        <section class="tech-stack-section">
+                            <details open>
+                                <summary data-i18n-key="skills_frontend">
+                                    <i class="fas fa-caret-down"></i> Frontend Development
+                                </summary>
+                                <div class="badges-container">
+                                    <span class="tech-badge html-badge"><i class="devicon-html5-plain"></i> HTML5</span>
+                                    <span class="tech-badge css-badge"><i class="devicon-css3-plain"></i> CSS3</span>
+                                    <span class="tech-badge sass-badge"><i class="devicon-sass-original"></i> Sass</span>
+                                    <span class="tech-badge js-badge"><i class="devicon-javascript-plain"></i> JavaScript</span>
+                                    <span class="tech-badge jquery-badge"><i class="devicon-jquery-plain"></i> jQuery</span>
+                                    <span class="tech-badge bootstrap-badge"><i class="devicon-bootstrap-plain"></i> Bootstrap</span>
+                                    <span class="tech-badge chartjs-badge">Chart.js</span>
+                                    <span class="tech-badge alpinejs-badge"><i class="devicon-alpinejs-original"></i> Alpine.js</span>
+                                </div>
+                            </details>
+
+                            <details open>
+                                <summary data-i18n-key="skills_backend">
+                                    <i class="fas fa-caret-down"></i> Backend & Databases
+                                </summary>
+                                <div class="badges-container">
+                                    <span class="tech-badge php-badge"><i class="devicon-php-plain"></i> PHP</span>
+                                    <span class="tech-badge laravel-badge"><i class="devicon-laravel-plain"></i> Laravel</span>
+                                    <span class="tech-badge blade-badge"><i class="devicon-blade-plain"></i> Blade</span>
+                                    <span class="tech-badge mysql-badge"><i class="devicon-mysql-plain"></i> MySQL</span>
+                                    <span class="tech-badge postgresql-badge"><i class="devicon-postgresql-plain"></i> PostgreSQL</span>
+                                    <span class="tech-badge python-badge"><i class="devicon-python-plain"></i> Python</span>
+                                </div>
+                            </details>
+
+                            <details open>
+                                <summary data-i18n-key="skills_mobile">
+                                    <i class="fas fa-caret-down"></i> Mobile App Development
+                                </summary>
+                                <div class="badges-container">
+                                    <span class="tech-badge flutter-badge"><i class="devicon-flutter-plain"></i> Flutter</span>
+                                    <span class="tech-badge dart-badge"><i class="devicon-dart-plain"></i> Dart</span>
+                                    <span class="tech-badge android-studio-badge"><i class="devicon-androidstudio-plain"></i> Android Studio</span>
+                                </div>
+                            </details>
+
+                            <details open>
+                                <summary data-i18n-key="skills_tools">
+                                    <i class="fas fa-caret-down"></i> Tools & Environment
+                                </summary>
+                                <div class="badges-container">
+                                    <span class="tech-badge github-badge"><i class="devicon-github-original"></i> GitHub</span>
+                                    <span class="tech-badge figma-badge"><i class="devicon-figma-plain"></i> Figma</span>
+                                    <span class="tech-badge xampp-badge"><i class="devicon-xampp-plain"></i> XAMPP</span>
+                                    <span class="tech-badge phpmyadmin-badge">phpMyAdmin</span>
+                                    <span class="tech-badge postman-badge"><i class="devicon-postman-plain"></i> Postman</span>
+                                    <span class="tech-badge env-badge">.env</span>
+                                    <span class="tech-badge json-badge">JSON</span>
+                                </div>
+                            </details>
+                        </section>
                         <!-- === END OF UPDATED SECTION === -->
                     </div>
                     <div id="about-content" class="tab-content">

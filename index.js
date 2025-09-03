@@ -51,6 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
             edu_description: "Мой путь обучения и ключевые области знаний.",
             skills_title: "Мои Навыки",
             skills_description: "Мои основные технические навыки и инструменты, которые я использую в работе.",
+            skills_frontend: "Frontend Разработка",
+            skills_backend: "Backend и Базы Данных",
+            skills_mobile: "Разработка Мобильных Приложений",
+            skills_tools: "Инструменты и Среда",
             about_me_title: "Обо Мне",
             about_me_description: "Подробная информация обо мне и моих личных данных.",
             about_name_label: "Имя:",
@@ -138,6 +142,10 @@ document.addEventListener('DOMContentLoaded', () => {
             edu_description: "My learning journey and key areas of knowledge.",
             skills_title: "My Skills",
             skills_description: "My core technical skills and tools I utilize in my work.",
+            skills_frontend: "Frontend Development",
+            skills_backend: "Backend & Databases",
+            skills_mobile: "Mobile App Development",
+            skills_tools: "Tools & Environment",
             about_me_title: "About Me",
             about_me_description: "Detailed information about me and my personal data.",
             about_name_label: "Name:",
@@ -225,6 +233,10 @@ document.addEventListener('DOMContentLoaded', () => {
             edu_description: "Meniň okuw ýolum we esasy bilim ugurlarym.",
             skills_title: "Meniň Başarnyklarym",
             skills_description: "Meniň esasy tehniki başarnyklarym we işde ulanýan gurallarym.",
+            skills_frontend: "Frontend Işläp Düzmek",
+            skills_backend: "Backend we Maglumat Bazalary",
+            skills_mobile: "Mobil Programmalary Işläp Düzmek",
+            skills_tools: "Gural we Gurşaw",
             about_me_title: "Men Barada",
             about_me_description: "Men we şahsy maglumatlarym barada jikme-jik maglumat.",
             about_name_label: "Ady:",
@@ -284,7 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { duration: 500, fill: "forwards" });
     });
 
-    const interactiveElements = document.querySelectorAll('a, button, .slider, .service-card, .skill-item, .resume-tab-btn, .info-block, .language-option, .selected-language');
+    const interactiveElements = document.querySelectorAll('a, button, .slider, .service-card, .skill-item, .resume-tab-btn, .info-block, .language-option, .selected-language, .tech-badge, summary');
     interactiveElements.forEach(el => {
         el.addEventListener('mouseover', () => {
             cursorDot.style.transform = 'scale(0.7)';
@@ -307,7 +319,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                     element.placeholder = text;
                 } else {
-                    element.innerHTML = text;
+                    // Для <summary> нужно обработать текст отдельно от иконки
+                    if (element.tagName === 'SUMMARY') {
+                        const icon = element.querySelector('i');
+                        element.textContent = text;
+                        if(icon) element.prepend(icon);
+                    } else {
+                        element.innerHTML = text;
+                    }
                 }
             }
         });
